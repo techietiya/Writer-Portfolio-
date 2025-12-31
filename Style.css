@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+body {
+  margin: 0;
+  background: #eae7dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Android phone size */
+.phone {
+  width: 360px;
+  height: 640px;
+  background: #fdfcf8;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Book */
+.book {
+  flex: 1;
+  position: relative;
+  perspective: 1500px;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transform-origin: left;
+  transition: transform 0.8s ease;
+  box-shadow: inset -5px 0 10px rgba(0,0,0,0.1);
+}
+
+.page h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.controls button {
+  flex: 1;
+  margin: 0 4px;
+  padding: 8px;
+  border: none;
+  background: #6b4eff;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Editor */
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editor input,
+.editor textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.editor textarea {
+  height: 70px;
+  resize: none;
+}
+
+.editor button {
+  padding: 8px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+}
